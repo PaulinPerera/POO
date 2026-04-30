@@ -11,7 +11,7 @@ namespace POO
 {
     class Apresentacao:Form
     {
-        // criar um objeto do automovel
+        // criar um objeto do automovel-----
         Automovel carr01 = new Automovel();
 
         // Objeto
@@ -61,7 +61,7 @@ namespace POO
             this.txtVelocidade.Location = new Point(100, 180);
 
             // COLOCAR IMAGEM
-            img.Image = Image.FromFile(@"C:\Users\LabInfo\source\repos\'Emerson - Rocha'\POO_\IMG\uno.jpg");
+            img.Image = Image.FromFile(@"C:\Users\LabInfo\source\repos\PaulinPerera\POO\IMG\uno.jpg");
             img.SizeMode = PictureBoxSizeMode.AutoSize;
             img.Width = 200;
             img.Height = 150;
