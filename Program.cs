@@ -12,7 +12,6 @@ namespace POO
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRender ingDefault(false);
             Application.Run(new Apresentacao());
         }
     }

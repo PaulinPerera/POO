@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Net.Http.Headers;
 
 namespace POO
 {
@@ -13,6 +13,9 @@ namespace POO
     {
         // criar um objeto do automovel
         Automovel carr01 = new Automovel();
+        Automovel carro02 = new Automovel();
+        Automovel carro03 = new Automovel();
+        Automovel carro04 = new Automovel();
 
         // Objeto
         PictureBox img = new PictureBox();
@@ -23,72 +26,159 @@ namespace POO
         Label txtModelo = new Label();
         Label txtFrear = new Label();
 
-        Button btobj01  = new Button() ;
-        Button btobj02 = new Button();
-
+        Button bumblebee  = new Button() ;
+        Button opala = new Button();
+        Button relampago = new Button();
+        Button uno = new Button();
 
         // toda classe tem um construtor
-        public Apresentacao() {
-            this.Text = "Titulo ";
-            this.Size = new Size(600, 600);
-            btobj01.Text = " Clicar ";
-            btobj01.Location = new Point(50, 50);
-            btobj01.Click += clicar ;
+        public Apresentacao()
+        {
+            this.Text = "Modelos de carros MUITO AURA 67676767";
+            this.Size = new Size(800, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-            btobj02.Text = " Herança ";
-            btobj02.Location = new Point(50, 100);
-            btobj02.Click += Heranca;
-            
-            txtFrear.AutoSize= true;
+            // ================= BOTÕES =================
 
-            // Control[] controles = new Control[] { txtMarca, btobj01 }; 
-            //this.Controls.Add(btobj01);
-            this.Controls.AddRange(new Control[] { txtMarca, btobj01, txtVelocidade
-            , txtTipo, txtAno, txtModelo, img, btobj02, txtFrear});
+            bumblebee.Text = "Carro 1 :)";
+            bumblebee.Size = new Size(120, 40);
+            bumblebee.Location = new Point(30, 30);
+            bumblebee.Click += clicar;
 
+            opala.Text = "Carro 2 :(";
+            opala.Size = new Size(120, 40);
+            opala.Location = new Point(30, 80);
+            opala.Click += clicar;
+
+            relampago.Text = "Carro 3 :()";
+            relampago.Size = new Size(120, 40);
+            relampago.Location = new Point(30, 130);
+            relampago.Click += clicar;
+
+            uno.Text = "Carro 4 :O";
+            uno.Size = new Size(120, 40);
+            uno.Location = new Point(30, 180);
+            uno.Click += clicar;
+
+            // ================= LABELS =================
+
+            txtMarca.AutoSize = true;
+            txtMarca.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtMarca.Location = new Point(200, 50);
+
+            txtModelo.AutoSize = true;
+            txtModelo.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtModelo.Location = new Point(200, 90);
+
+            txtAno.AutoSize = true;
+            txtAno.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtAno.Location = new Point(200, 130);
+
+            txtVelocidade.AutoSize = true;
+            txtVelocidade.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtVelocidade.Location = new Point(200, 170);
+
+            txtFrear.AutoSize = true;
+            txtFrear.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtFrear.Location = new Point(200, 210);
+
+            // ================= IMAGEM =================
+
+            img.Location = new Point(450, 50);
+            img.Size = new Size(280, 200);
+            img.SizeMode = PictureBoxSizeMode.StretchImage;
+            img.BorderStyle = BorderStyle.FixedSingle;
+
+            // ================= CONTROLES =================
+
+            this.Controls.AddRange(new Control[]
+            {
+        bumblebee,
+        opala,
+        relampago,
+        uno,
+
+        txtMarca,
+        txtModelo,
+        txtAno,
+        txtVelocidade,
+        txtFrear,
+
+        img
+            });
         }
 
         // metodo de Evento
         private void clicar( object sender , EventArgs e ) {
-            //MessageBox.Show("Metodo de Evento");
-            // fazer apresentação da carro01
-            //carr01.SetMarca("Fiat");
-            // this.txtMarca.Text = " Marca : " + carr01.GetMarca();
-            carr01.Marca = "Fiat";
-            carr01.Ano = 2020;
-            carr01.Modelo = "Uno";
-            carr01.Velocidade = "200 km/h";
-           
-        
-            txtMarca.Text = " Marca : " + carr01.Marca;
-            txtModelo.Text = "Tipo :" + carr01.Modelo;
-            txtAno.Text = " Ano : " + carr01.Ano;
-            txtVelocidade.AutoSize= true;
-            txtVelocidade.Text = " Velocidade :  " + carr01.Acelerar(120).ToString(); 
-            txtFrear.Text = " Frear : " + carr01.Frear();
 
-            this.txtMarca.Location = new Point(100, 100);
-            this.txtAno.Location = new Point(100, 130);
-            this.txtModelo.Location = new Point(100, 150);          
-            this.txtVelocidade.Location = new Point(100, 180);
-            this.txtFrear.Location = new Point(100, 210);
+            if (sender == bumblebee)
+            {
+                carr01.Marca = "Transformes";
+                carr01.Ano = "5067 A.C.";
+                carr01.Modelo = "B-127";
+                carr01.Velocidade = "1000000 km/h";
 
-            // COLOCAR IMAGEM
-            //img.Image = Image.FromFile(@"C:\Users\LabInfo\source\repos\'Emerson - Rocha'\POO_\IMG\uno.jpg");
-            //img.SizeMode = PictureBoxSizeMode.AutoSize;
-            //img.Width = 200;
-            //img.Height = 150;
-            // this.img.Location = new Point(100, 200);
+                txtMarca.Text = " Marca : " + carr01.Marca;
+                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtAno.Text = " Ano : " + carr01.Ano;
+                txtVelocidade.AutoSize = true;
+                txtVelocidade.Text = carr01.Acelerar("120");
+                txtFrear.Text = " Frear : " + carr01.Frear();
 
+                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\bumblebee.jpg");
+            }
 
+            else if (sender == uno)
+            {
+                carr01.Marca = "Incrivel";
+                carr01.Ano = "2";
+                carr01.Modelo = "4 portas";
+                carr01.Velocidade = "1.079.252.849 km/h";
+
+                txtMarca.Text = " Marca : " + carr01.Marca;
+                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtAno.Text = " Ano : " + carr01.Ano;
+                txtVelocidade.AutoSize = true;
+                txtVelocidade.Text = carr01.Acelerar("120");
+                txtFrear.Text = " Frear : " + carr01.Frear();
+
+                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\uno.jpg");
+            }
+
+            else if (sender == opala)
+            {
+                carr01.Marca = "Sobrenatural";
+                carr01.Ano = "2005";
+                carr01.Modelo = "Winchester";
+                carr01.Velocidade = "315 km/h";
+
+                txtMarca.Text = " Marca : " + carr01.Marca;
+                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtAno.Text = " Ano : " + carr01.Ano;
+                txtVelocidade.AutoSize = true;
+                txtVelocidade.Text = carr01.Acelerar("120");
+                txtFrear.Text = " Frear : " + carr01.Frear();
+
+                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\opala.jpg");
+            }
+
+            else if (sender == relampago)
+            {
+                carr01.Marca = "Velocidade";
+                carr01.Ano = "Desconhecido";
+                carr01.Modelo = "Katchau";
+                carr01.Velocidade = "Incompreencivel";
+
+                txtMarca.Text = " Marca : " + carr01.Marca;
+                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtAno.Text = " Ano : " + carr01.Ano;
+                txtVelocidade.AutoSize = true;
+                txtVelocidade.Text = carr01.Velocidade;
+                txtFrear.Text = " Frear : " + carr01.Frear();
+
+                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\relampago.jpg");
+            }
         }
 
-       private void Heranca(object sender, EventArgs e)
-        {
-            Carro Obj01Carro = new Carro("CHEVETTE", "SUV");
-            txtMarca.Text = " Marca : " + Obj01Carro.Marca;
-            txtTipo.Text = " Tipo : " + Obj01Carro.Modelo;
-            txtFrear.Text = Obj01Carro.Frear();
-        }
     }
 }
