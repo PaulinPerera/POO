@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace POO
 {
@@ -38,8 +39,6 @@ namespace POO
             this.Size = new Size(800, 500);
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // ================= BOTÕES =================
-
             bumblebee.Text = "Carro 1 :)";
             bumblebee.Size = new Size(120, 40);
             bumblebee.Location = new Point(30, 30);
@@ -60,55 +59,33 @@ namespace POO
             uno.Location = new Point(30, 180);
             uno.Click += clicar;
 
-            // ================= LABELS =================
-
             txtMarca.AutoSize = true;
-            txtMarca.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtMarca.Font = new Font("Arial", 10);
             txtMarca.Location = new Point(200, 50);
 
             txtModelo.AutoSize = true;
-            txtModelo.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtModelo.Font = new Font("Arial", 10);
             txtModelo.Location = new Point(200, 90);
 
             txtAno.AutoSize = true;
-            txtAno.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtAno.Font = new Font("Arial", 10);
             txtAno.Location = new Point(200, 130);
 
             txtVelocidade.AutoSize = true;
-            txtVelocidade.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtVelocidade.Font = new Font("Arial", 10);
             txtVelocidade.Location = new Point(200, 170);
 
             txtFrear.AutoSize = true;
-            txtFrear.Font = new Font("Arial", 10, FontStyle.Bold);
+            txtFrear.Font = new Font("Arial", 10);
             txtFrear.Location = new Point(200, 210);
-
-            // ================= IMAGEM =================
 
             img.Location = new Point(450, 50);
             img.Size = new Size(280, 200);
             img.SizeMode = PictureBoxSizeMode.StretchImage;
-            img.BorderStyle = BorderStyle.FixedSingle;
-
-            // ================= CONTROLES =================
 
             this.Controls.AddRange(new Control[]
-            {
-        bumblebee,
-        opala,
-        relampago,
-        uno,
-
-        txtMarca,
-        txtModelo,
-        txtAno,
-        txtVelocidade,
-        txtFrear,
-
-        img
-            });
+            {bumblebee, opala, relampago, uno, txtMarca, txtModelo, txtAno, txtVelocidade, txtFrear, img});
         }
-
-        // metodo de Evento
         private void clicar( object sender , EventArgs e ) {
 
             if (sender == bumblebee)
@@ -119,13 +96,13 @@ namespace POO
                 carr01.Velocidade = "1000000 km/h";
 
                 txtMarca.Text = " Marca : " + carr01.Marca;
-                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtModelo.Text = " Tipo :" + carr01.Modelo;
                 txtAno.Text = " Ano : " + carr01.Ano;
                 txtVelocidade.AutoSize = true;
                 txtVelocidade.Text = carr01.Acelerar("120");
                 txtFrear.Text = " Frear : " + carr01.Frear();
 
-                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\bumblebee.jpg");
+                img.Image = Properties.Resources.bumblebee;
             }
 
             else if (sender == uno)
@@ -136,13 +113,13 @@ namespace POO
                 carr01.Velocidade = "1.079.252.849 km/h";
 
                 txtMarca.Text = " Marca : " + carr01.Marca;
-                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtModelo.Text = " Tipo :" + carr01.Modelo;
                 txtAno.Text = " Ano : " + carr01.Ano;
                 txtVelocidade.AutoSize = true;
                 txtVelocidade.Text = carr01.Acelerar("120");
                 txtFrear.Text = " Frear : " + carr01.Frear();
 
-                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\uno.jpg");
+                img.Image = Properties.Resources.uno;
             }
 
             else if (sender == opala)
@@ -153,13 +130,13 @@ namespace POO
                 carr01.Velocidade = "315 km/h";
 
                 txtMarca.Text = " Marca : " + carr01.Marca;
-                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtModelo.Text = " Tipo :" + carr01.Modelo;
                 txtAno.Text = " Ano : " + carr01.Ano;
                 txtVelocidade.AutoSize = true;
                 txtVelocidade.Text = carr01.Acelerar("120");
                 txtFrear.Text = " Frear : " + carr01.Frear();
 
-                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\opala.jpg");
+                img.Image = Properties.Resources.opala;
             }
 
             else if (sender == relampago)
@@ -170,13 +147,13 @@ namespace POO
                 carr01.Velocidade = "Incompreencivel";
 
                 txtMarca.Text = " Marca : " + carr01.Marca;
-                txtModelo.Text = "Tipo :" + carr01.Modelo;
+                txtModelo.Text = " Tipo :" + carr01.Modelo;
                 txtAno.Text = " Ano : " + carr01.Ano;
                 txtVelocidade.AutoSize = true;
                 txtVelocidade.Text = carr01.Velocidade;
                 txtFrear.Text = " Frear : " + carr01.Frear();
 
-                img.Image = Image.FromFile(@"C:\Users\LabInfo\Desktop\Nova pasta\IMG\relampago.jpg");
+                img.Image = Properties.Resources.relampago;
             }
         }
 
