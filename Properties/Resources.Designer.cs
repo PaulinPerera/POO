@@ -63,6 +63,16 @@ namespace POO.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blaze {
+            get {
+                object obj = ResourceManager.GetObject("blaze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bumblebee {
             get {
                 object obj = ResourceManager.GetObject("bumblebee", resourceCulture);

@@ -84,6 +84,11 @@
     <Content Include="IMG\opala.jpg" />
     <Content Include="IMG\relampago.jpg" />
     <Content Include="IMG\uno.jpg" />
+    <None Include="Resources\uno.png" />
+    <None Include="Resources\relampago.png" />
+    <None Include="Resources\opala.png" />
+    <None Include="Resources\bumblebee.png" />
+    <None Include="Resources\blaze.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
