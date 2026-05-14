@@ -12,10 +12,8 @@ namespace POO
 {
     class Apresentacao:Form
     {
-        // criar um objeto do automovel
         Automovel carr01 = new Automovel();
 
-        // Objeto
         PictureBox img = new PictureBox();
         Label txtMarca = new Label();
         Label txtTipo = new Label();
@@ -30,7 +28,7 @@ namespace POO
         Button uno = new Button();
         Button blaze = new Button();
 
-        // toda classe tem um construtor
+        Panel painelInfo = new Panel();
         public Apresentacao()
         {
             this.Text = "Concessionária auto-lendas";
@@ -38,59 +36,78 @@ namespace POO
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.LightGray;
 
+
+
+            painelInfo.BackColor = Color.White;
+            painelInfo.Size = new Size(300, 220);
+            painelInfo.Location = new Point(40, 100);
+            painelInfo.Visible = false;
+
             bumblebee.Text = "Carro 1";
             bumblebee.Size = new Size(120, 40);
             bumblebee.Location = new Point(40, 30);
             bumblebee.Click += clicar;
+            bumblebee.BackColor = Color.White;
 
             opala.Text = "Carro 2";
             opala.Size = new Size(120, 40);
             opala.Location = new Point(180, 30);
             opala.Click += clicar;
+            opala.BackColor = Color.White;
 
             relampago.Text = "Carro 3";
             relampago.Size = new Size(120, 40);
             relampago.Location = new Point(320, 30);
             relampago.Click += clicar;
+            relampago.BackColor = Color.White;
 
             uno.Text = "Carro 4";
             uno.Size = new Size(120, 40);
             uno.Location = new Point(460, 30);
             uno.Click += clicar;
+            uno.BackColor = Color.White;
 
             blaze.Text = "Carro 5";
             blaze.Size = new Size(120, 40);
             blaze.Location = new Point(600, 30);
             blaze.Click += clicar;
+            blaze.BackColor = Color.White;
 
             txtMarca.AutoSize = true;
             txtMarca.Font = new Font("Arial", 10);
             txtMarca.Location = new Point(60, 120);
+            txtMarca.BackColor = Color.White;
 
             txtModelo.AutoSize = true;
             txtModelo.Font = new Font("Arial", 10);
             txtModelo.Location = new Point(60, 160);
+            txtModelo.BackColor = Color.White;
 
             txtAno.AutoSize = true;
             txtAno.Font = new Font("Arial", 10);
             txtAno.Location = new Point(60, 200);
+            txtAno.BackColor = Color.White;
 
             txtVelocidade.AutoSize = true;
             txtVelocidade.Font = new Font("Arial", 10);
             txtVelocidade.Location = new Point(60, 240);
+            txtVelocidade.BackColor = Color.White;
 
             txtFrear.AutoSize = true;
             txtFrear.Font = new Font("Arial", 10);
             txtFrear.Location = new Point(60, 280);
+            txtFrear.BackColor = Color.White;
 
             img.Location = new Point(420, 120);
             img.Size = new Size(280, 200);
             img.SizeMode = PictureBoxSizeMode.Zoom;
 
             this.Controls.AddRange(new Control[]
-            {bumblebee, opala, relampago, uno, blaze, txtMarca, txtModelo, txtAno, txtVelocidade, txtFrear, img});
+            {bumblebee, opala, relampago, uno, blaze, txtMarca, txtModelo, txtAno, txtVelocidade, txtFrear, img, painelInfo});
         }
         private void clicar( object sender , EventArgs e ) {
+
+            painelInfo.Visible = true;
 
             if (sender == bumblebee)
             {
